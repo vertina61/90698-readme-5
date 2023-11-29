@@ -1,7 +1,7 @@
 # Личный проект «Readme»
 
 * Студент: [Наталья Володина](https://up.htmlacademy.ru/nodejs-2/5/user/90698).
-* Наставник: `Неизвестно`.
+* Наставник: [Александр Сушко](https://htmlacademy.ru/profile/sashasushko).
 
 ---
 
