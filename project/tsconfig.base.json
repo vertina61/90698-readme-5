@@ -17,6 +17,7 @@
     "paths": {
       "@project/shared/app": ["libs/shared/app/src/index.ts"],
       "@project/shared/app/types": ["libs/shared/app/types/src/index.ts"],
+      "@project/shared/core": ["libs/shared/core/src/index.ts"],
       "@project/shared/helpers": ["libs/shared/helpers/src/index.ts"]
     }
   },
