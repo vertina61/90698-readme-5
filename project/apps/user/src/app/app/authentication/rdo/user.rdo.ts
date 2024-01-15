@@ -17,13 +17,6 @@ export class UserRdo {
   public avatar: string;
 
   @ApiProperty({
-    description: 'User date birth (ISO format)',
-    example: '1981-03-12'
-  })
-  @Expose()
-  public dateOfBirth: string;
-
-  @ApiProperty({
     description: 'User email',
     example: 'user@user.local'
   })
@@ -37,10 +30,4 @@ export class UserRdo {
   @Expose()
   public firstname: string;
 
-  @ApiProperty({
-    description: 'User last name',
-    example: 'Keks'
-  })
-  @Expose()
-  public lastname: string;
 }

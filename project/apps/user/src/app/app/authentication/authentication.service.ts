@@ -14,11 +14,11 @@ export class AuthenticationService {
   ) {}
 
   public async register(dto: CreateUserDto) {
-    const {email, firstname, lastname, password, dateBirth} = dto;
+    const {email, firstname, password} = dto;
 
     const blogUser = {
-      email, firstname, lastname, role: UserRole.User,
-      avatar: '', dateOfBirth: dayjs(dateBirth).toDate(),
+      email, firstname, role: UserRole.User,
+      avatar: '', dateOfReg: dayjs().toDate(),
       passwordHash: ''
     };
 
