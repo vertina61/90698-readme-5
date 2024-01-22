@@ -12,24 +12,24 @@ datasource db {
 }
 
 model Post {
-  id            String   @id @default(uuid()) @map("id")
-  isDraft       Boolean  @map("is_draft")
-  type          String
-  title         String
+  id            String   @id @default(uuid()) @map("id") //Уникальный идентификатор публикации
+  isDraft       Boolean  @map("is_draft") // состояние Опубликована, Черновик
+  type          String // тип публикации
+  title         String // название публикации для 'видео', 'текст'
   userId        String @map("user_id")
-  description   String
-  videoUrl      String   @map("video_url")
-  photoUrl      String   @map("photo_url")
-  quote         String
-  quoteAuthor   String   @map("quote_author")
-  content       String
-  tags          Tag[]
+  description   String // анонс публикации
+  videoUrl      String   @map("video_url") // ссылка на 'видео'
+  photoUrl      String   @map("photo_url") // фотография
+  quote         String // текст цитаты
+  quoteAuthor   String   @map("quote_author") // автор цитаты
+  content       String // текст публикации для 'текст' и описание для 'ссылка'
+  tags          Tag[] // набор тегов
   comments      Comment[]
-  linkUrl       String   @map("link_url")
+  linkUrl       String   @map("link_url") // ссылка
   likesCount    Int      @map("likes_count")
   commentsCount Int      @map("comments_count")
-  createdAt     DateTime @default(now()) @map("created_at")
-  updatedAt     DateTime @updatedAt @map("updated_at")
+  createdAt     DateTime @default(now()) @map("created_at") // дата создания публикации
+  updatedAt     DateTime @updatedAt @map("updated_at") // дата публикации
 
   @@index([title])
   @@map("posts")
