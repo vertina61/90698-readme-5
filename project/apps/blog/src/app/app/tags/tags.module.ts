@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
-import { TagsController } from './tags.controller';
-import { TagsService } from './tags.service';
+import { PrismaClientModule } from '@project/shared/blog/models';
+import { BlogTagController } from './tags.controller';
+import { BlogTagService } from './tags.service';
+import { BlogTagRepository } from './blog-tag.repository';
 
 @Module({
-  controllers: [TagsController],
-  providers: [TagsService],
+  imports: [PrismaClientModule],
+  controllers: [BlogTagController],
+  providers: [BlogTagRepository,BlogTagService],
 })
 export class TagsModule {}

@@ -1,20 +1,18 @@
 import { ClassTransformOptions, plainToInstance } from 'class-transformer';
 
-type PlainObject = Record<string, unknown>;
-
-export function fillDto<T, V extends PlainObject>(
+export function fillDto<T, V>(
   DtoClass: new () => T,
   plainObject: V,
   options?: ClassTransformOptions,
 ): T;
 
-export function fillDto<T, V extends PlainObject[]>(
+export function fillDto<T, V >(
   DtoClass: new () => T,
   plainObject: V,
   options?: ClassTransformOptions,
 ): T[];
 
-export function fillDto<T, V extends PlainObject>(
+export function fillDto<T, V >(
   DtoClass: new () => T,
   plainObject: V,
   options?: ClassTransformOptions,
@@ -27,4 +25,8 @@ export function fillDto<T, V extends PlainObject>(
 
 export function getMongoConnectionString({username, password, host, port, databaseName, authDatabase}): string {
   return `mongodb://${username}:${password}@${host}:${port}/${databaseName}?authSource=${authDatabase}`;
+}
+
+export function getRabbitMQConnectionString({user, password, host, port}): string {
+  return `amqp://${user}:${password}@${host}:${port}`;
 }
