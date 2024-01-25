@@ -6,12 +6,14 @@ import { fillDto } from '@project/shared/helpers';
 import { UserRdo } from './rdo/user.rdo';
 import { LoginUserDto } from './dto/login-user.dto';
 import { LoggedUserRdo } from './rdo/logged-user.rdo';
+import { NotificationsService } from '../notifications/notifications.service';
 
 @ApiTags('authentication')
 @Controller('authentication')
 export class AuthenticationController {
   constructor(
-    private readonly authService: AuthenticationService
+    private readonly authService: AuthenticationService,
+    private readonly notificationsService: NotificationsService,
   ) {}
 
   @ApiResponse({
@@ -21,6 +23,8 @@ export class AuthenticationController {
   @Post('register')
   public async create(@Body() dto: CreateUserDto) {
     const newUser = await this.authService.register(dto);
+    const { email, firstname} = newUser;
+    await this.notificationsService.registerSubscriber({ email, firstname});
     return fillDto(UserRdo, newUser.toPOJO());
   }
 

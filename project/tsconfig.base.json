@@ -20,6 +20,9 @@
       "@project/shared/blog/models": ["libs/shared/blog/models/src/index.ts"],
       "@project/shared/config": ["libs/shared/config/src/index.ts"],
       "@project/shared/config/file": ["libs/shared/config/file/src/index.ts"],
+      "@project/shared/config/notifications": [
+        "libs/shared/config/notifications/src/index.ts"
+      ],
       "@project/shared/config/user": ["libs/shared/config/user/src/index.ts"],
       "@project/shared/core": ["libs/shared/core/src/index.ts"],
       "@project/shared/helpers": ["libs/shared/helpers/src/index.ts"]
