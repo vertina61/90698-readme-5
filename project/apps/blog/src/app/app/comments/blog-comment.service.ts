@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
-
-import { BlogPostService } from '../blog-post/blog-post.service';
+import { BlogPostService } from '../posts/blog-post.service';
 import { CreateCommentDto } from './dto/create-comment.dto';
 import { BlogCommentEntity } from './blog-comment.entity';
 import { BlogCommentRepository } from './blog-comment.repository';
